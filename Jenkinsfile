@@ -18,6 +18,11 @@ pipeline {
 						sh 'sudo systemctl status jenkins'
 					}
 				}
+				stage('user-check'){
+					steps{
+						sh 'cat /etc/passwd | grep jenkins'
+					}
+				}
 			}
 		}
 		stage('system check'){
